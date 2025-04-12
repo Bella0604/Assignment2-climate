@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>悬停背景切换</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .image-box {
+      width: 120px;
+      height:100px;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.4s ease;
+      cursor: pointer;
+    }
+
+    /* 设置不同格子的默认图和悬停图 */
+    .img1 {
+      background-image: url('img/sunny1.svg');
+    }
+    .img1:hover {
+      background-image: url('img/sunny2.svg');
+    }
+
+    .img2 {
+      background-image: url('img/cloudy1.svg');
+    }
+    .img2:hover {
+      background-image: url('img/cloudy2.svg');
+    }
+
+    .img3 {
+      background-image: url('img/rain1.svg');
+    }
+    .img3:hover {
+      background-image: url('img/rain2.svg');
+    }
+
+    .img4 {
+      background-image: url('img/snowy1.svg');
+    }
+    .img4:hover {
+      background-image: url('img/snowy2.svg');
+    }
+
+    .img5 {
+      background-image: url('img/windy1.svg');
+    }
+    .img5:hover {
+      background-image: url('img/windy2.svg');
+    }
+
+    .img6 {
+      background-image: url('img/tornado1.svg');
+    }
+    .img6:hover {
+      background-image: url('img/tornado2.svg');
+    }
+
+    .img7 {
+      background-image: url('img/hail1.svg');
+    }
+    .img7:hover {
+      background-image: url('img/hail2.svg');
+    }
+
+    .img8 {
+      background-image: url('img/foggy1.svg');
+    }
+    .img8:hover {
+      background-image: url('img/foggy2.svg');
+    }
+    .img9 {
+      background-image: url('img/rainbow1.svg');
+    }
+    .img9:hover {
+      background-image: url('img/rainbow2.svg');
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="gallery">
+  <div class="image-box img1" id="audioTarget1"></div>
+  <div class="image-box img2" id="audioTarget2"></div>
+  <div class="image-box img3" id="audioTarget3"></div>
+  <div class="image-box img4" id="audioTarget4"></div>
+  <div class="image-box img5" id="audioTarget5"></div>
+  <div class="image-box img6" id="audioTarget6"></div>
+  <div class="image-box img7" id="audioTarget7"></div>
+  <div class="image-box img8" id="audioTarget8"></div>
+  <div class="image-box img9" id="audioTarget9"></div>
+</div>
+
+
+<audio id="hoverSoundSunny" preload="auto">
+  <source src="img/sunny.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundCloudy" preload="auto">
+  <source src="img/cloudy.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundRainy" preload="auto">
+  <source src="img/rain.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundSnowy" preload="auto">
+  <source src="img/snow.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundWindy" preload="auto">
+  <source src="img/wind.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundTornado" preload="auto">
+  <source src="img/tornado.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundHail" preload="auto">
+  <source src="img/storm.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundFoggy" preload="auto">
+  <source src="img/foggy.m4a" type="audio/mp4">
+</audio>
+<audio id="hoverSoundRainbow" preload="auto">
+  <source src="img/rainbow.m4a" type="audio/mp4">
+</audio>
+
+
+
+<script>
+  const target1 = document.getElementById('audioTarget1');
+  const sound1 = document.getElementById('hoverSoundSunny');
+ // play sound when mouse enters
+  target1.addEventListener('mouseenter', () => {
+    sound1.currentTime = 0; // 从头开始播放
+    sound1.play();
+  });
+
+  target1.addEventListener('mouseleave', () => {
+    sound1.pause(); // 鼠标移出暂停
+    sound1.currentTime = 0; // 从头开始播放
+  });
+
+  const target2 = document.getElementById('audioTarget2');
+  const sound2 = document.getElementById('hoverSoundCloudy');
+
+  target2.addEventListener('mouseenter', () => {
+    sound2.currentTime = 0; // 从头开始播放
+    sound2.play();
+  });
+
+  target2.addEventListener('mouseleave', () => {
+    sound2.pause(); // 鼠标移出暂停
+    sound2.currentTime = 0; // 从头开始播放
+  })
+
+  const target3 = document.getElementById('audioTarget3');
+  const sound3 = document.getElementById('hoverSoundRainy');
+
+  target3.addEventListener('mouseenter', () => {
+    sound3.currentTime = 0; // 从头开始播放
+    sound3.play();
+  });
+
+  target3.addEventListener('mouseleave', () => {
+    sound3.pause(); // 鼠标移出暂停
+    sound3.currentTime = 0; // 从头开始播放
+  })
+
+  const target4 = document.getElementById('audioTarget4');
+  const sound4 = document.getElementById('hoverSoundSnowy');
+
+  target4.addEventListener('mouseenter', () => {
+    sound4.currentTime = 0; // 从头开始播放
+    sound4.play();
+  });
+
+  target4.addEventListener('mouseleave', () => {
+    sound4.pause(); // 鼠标移出暂停
+    sound4.currentTime = 0; // 从头开始播放
+  })
+  const target5 = document.getElementById('audioTarget5');
+  const sound5 = document.getElementById('hoverSoundWindy');
+
+  target5.addEventListener('mouseenter', () => {
+    sound5.currentTime = 0; // 从头开始播放
+    sound5.play();
+  });
+
+  target5.addEventListener('mouseleave', () => {
+    sound5.pause(); // 鼠标移出暂停
+    sound5.currentTime = 0; // 从头开始播放
+  })
+  const target6 = document.getElementById('audioTarget6');
+  const sound6 = document.getElementById('hoverSoundTornado');
+
+  target6.addEventListener('mouseenter', () => {
+    sound6.currentTime = 0; // 从头开始播放
+    sound6.play();
+  });
+
+  target6.addEventListener('mouseleave', () => {
+    sound6.pause(); // 鼠标移出暂停
+    sound6.currentTime = 0; // 从头开始播放
+  })
+  const target7 = document.getElementById('audioTarget7');
+  const sound7 = document.getElementById('hoverSoundHail');
+
+  target7.addEventListener('mouseenter', () => {
+    sound7.currentTime = 0; // 从头开始播放
+    sound7.play();
+  });
+
+  target7.addEventListener('mouseleave', () => {  
+    sound7.pause(); // 鼠标移出暂停
+    sound7.currentTime = 0; // 从头开始播放
+
+  })
+  const target8 = document.getElementById('audioTarget8');
+  const sound8 = document.getElementById('hoverSoundFoggy');
+
+  target8.addEventListener('mouseenter', () => {
+    sound8.currentTime = 0; // 从头开始播放
+    sound8.play();
+  });
+
+  target8.addEventListener('mouseleave', () => {  
+    sound8.pause(); // 鼠标移出暂停
+    sound8.currentTime = 0; // 从头开始播放
+
+  });
+  const target9 = document.getElementById('audioTarget9');
+  const sound9 = document.getElementById('hoverSoundRainbow');
+
+  target9.addEventListener('mouseenter', () => {
+    sound9.currentTime = 0; // 从头开始播放
+    sound9.play();
+  });
+
+  target9.addEventListener('mouseleave', () => {  
+    sound9.pause(); // 鼠标移出暂停
+    sound9.currentTime = 0; // 从头开始播放
+
+  });
+
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
